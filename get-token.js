@@ -34,10 +34,10 @@ async function getToken() {
         if (data.Error === false) {
             return data;
         } else {
-            throw new Error("Token retrieval failed: " + (data.Message || "Unknown error"));
+            throw new Error("Token Retrieval Failed: " + (data.Message || "Unknown Error"));
         }
     } catch (error) {
-        console.error("Token retrieval error:", error.message || error);
+        console.error("Token Retrieval Error:", error.message || error);
         return null;
     }
 }
@@ -51,7 +51,7 @@ apiRoutes.post('/send-with-token', async (req, res) => {
     const token = await getToken();
 
     if (!token) {
-        return res.status(500).json({ error: "Failed to retrieve token" });
+        return res.status(500).json({ error: "Failed To Retrieve Token" });
     }
 
     const payload = {
@@ -69,5 +69,5 @@ apiRoutes.post('/send-with-token', async (req, res) => {
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`Server Running On Port ${PORT}`);
 });
