@@ -48,6 +48,8 @@ apiRoutes.post('/send-with-token', async (req, res) => {
     var RqDtTm = moment(DateTrans).format("YYYY-MM-DDTHH:mm:ss");
     console.log(`Request Date-Time: ${RqDtTm}`)
 
+    console.log(req.body)
+
     const token = await getToken();
 
     if (!token) {
